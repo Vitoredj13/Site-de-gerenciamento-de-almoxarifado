@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne overflow horizontal */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Cor de fundo principal */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
+    color: #fff;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 65px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+/* Estilo dos itens do menu */
+
+.menu a {
+    background-color: #495057; /* Cor dos botões do menu */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+
+
+.butao:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #555;
+}
+.solicitacao-btn {
+    background-color: #007bff; /* Verde para os botões */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #c8e6c9; /* Verde claro para a borda */
+    text-decoration: none;
+    
+}
+
+.solicitacao-btn:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #ccd1d9;
+}
+
+.content {
+    padding: 20px;
+    background-color: #444; /* Fundo cinza escuro para o conteúdo */
+    max-width: 600px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h2 {
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Estilizando os campos de texto, número e a seleção */
+input[type="text"], input[type="date"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px; /* Mesma borda arredondada dos botões */
+    border: none;
+    background-color: #4b535c; /* Fundo escuro para os campos */
+    color: #fff; /* Texto branco */
+    box-sizing: border-box;
+}
+
+/* Hover dos campos para corresponder ao hover dos botões */
+input[type="text"]:hover, input[type="date"]:hover, input[type="number"]:hover, select:hover {
+    background-color: #555; /* Fundo cinza mais claro no hover */
+    transform: perspective(200px) translateZ(10px); /* Mesmo efeito de transição */
+}
+
+/* Estilo para a textarea de Descrição */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px; /* Mesma borda arredondada dos botões */
+    border: none;
+    background-color: #4b535c; /* Fundo escuro para o textarea */
+    color: #fff; /* Texto branco */
+    box-sizing: border-box;
+    resize: none; /* Impede o redimensionamento manual */
+}
+
+/* Hover para o textarea */
+textarea:hover {
+    background-color: #555; /* Fundo cinza mais claro no hover */
+    transform: perspective(200px) translateZ(10px); /* Mesmo efeito de transição */
+}
+.radio-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Oculta os botões de rádio */
+}
+
+.radio-group label {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.radio-group label.entrada {
+    background-color: green;
+}
+
+.radio-group label.saida {
+    background-color: red;
+}
+
+.radio-group input[type="radio"]:checked + label.entrada {
+    background-color: darkgreen; /* Cor quando selecionado */
+}
+
+.radio-group input[type="radio"]:checked + label.saida {
+    background-color: darkred; /* Cor quando selecionado */
+}
+
+.entrada, .saida, .Enviar {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+}
+
+.entrada {
+    background-color: #32CD32;
+    margin-bottom: 20px; /* Verde para "Entrada" */
+}
+
+.saida {
+    background-color: #ff4800;
+    margin-bottom: 20px; /* Laranja para "Saída" */
+}
+
+/* Estilo padrão do botão de Enviar */
+#enviar-btn {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+    background-color: #007bff; /* Azul padrão */
+    width: 100%; /* Faz o botão ocupar toda a largura do formulário */
+    margin-left: 0; /* Remove a margem à esquerda */
+}
+
+/* Estilo para o botão de Adicionar (verde) */
+#enviar-btn.adicionar {
+    background-color: #32CD32;
+}
+
+/* Estilo para o botão de Remover (laranja) */
+#enviar-btn.remover {
+    background-color: #ff4800;
+}
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+/* Tornando o site responsivo */
+@media (max-width: 768px) {
+    /* Ajuste para dispositivos móveis */
+    .navbar {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center; /* Alinha os itens ao centro */
+        padding: 10px;
+        height: auto;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin: 5px 0;
+        width: 90%; /* Torna os botões mais largos para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        width: 90%; /* Faz com que o botão ocupe quase toda a largura */
+        margin: 10px auto; /* Centraliza o botão */
+    }
+
+    .content {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 100%;
+    }
+
+    .dual-btn {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .Enviar {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para dispositivos ainda menores */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* Centraliza os itens */
+        width: 100%; /* Ocupa toda a largura */
+        position: relative; /* Contexto de posicionamento para o botão */
+        padding: 10px;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around;
+        margin-bottom: 10px; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin-right: 5px;
+        
+        width: 90%; /* Ajusta os botões para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        order: -1; /* Coloca o botão no topo */
+        position: absolute;
+        top: 10px; /* Alinha o botão ao topo */
+        right: 25px; /* Alinha o botão à direita */
+        margin-left: 0; /* Remove a margem automática */
+        width: auto; /* Mantém o tamanho automático */
+    }
+
+    /* Ajuste do logo para estar acima do botão DashBoard */
+    .logo {
+        margin-bottom: 10px;
+        margin-left: 1px; /* Afasta um pouco da lateral esquerda */
+        align-self: flex-start; /* Alinha à esquerda */
+    }
+
+    .logo img {
+        width: 60px;  /* Ajusta o tamanho conforme necessário */
+        height: 50px;
+    }
+
+    /* Garante que os botões do menu fiquem após o logo */
+    .menu, .menur, .menue {
+        order: 1;
+        width: 100%;
+        text-align: left; /* Alinha os botões à esquerda */
+    }
+
+    .content {
+        padding: 15px;
+        max-width: 95%; /* Preenche quase toda a largura da tela */
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], select, textarea {
+        width: calc(100% - 5px);
+        padding: 8px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .dual-btn {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .Enviar {
+        margin-left: 0;
+        width: 100%;
+    }
+}

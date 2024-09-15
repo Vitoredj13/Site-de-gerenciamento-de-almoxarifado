@@ -1,0 +1,60 @@
+/* Tornando o site responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center; /* Alinha os itens ao centro */
+        padding: 10px;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .menu, .menur, .menue {
+        flex-direction: column; /* Muda a direção dos itens para coluna */
+        align-items: center; /* Centraliza os itens */
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        width: 100%; /* Faz com que a barra de navegação ocupe toda a largura */
+        margin-bottom: 10px;
+    }
+
+    .menu a, .menur a, .menue a {
+        width: 90%; /* Torna os botões mais largos para preenchimento da tela */
+        margin: 5px 0; /* Margem entre os botões */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        width: 90%; /* Faz com que o botão de solicitação ocupe a largura desejada */
+        margin: 10px 0; /* Centraliza e adiciona espaço abaixo */
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 100%;
+        align-items: flex-start; /* Alinha itens à esquerda para telas bem pequenas */
+        padding: 10px;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+      width: 100%; /* Ajuste para telas ainda menores */
+        margin-bottom: 5px; /* Espaçamento entre botões */
+    }
+
+    .solicitacao-btn {
+        position: absolute;
+        top: 10px; /* Ajusta o botão de solicitação para a parte superior */
+        right: 20px; /* Alinha o botão à direita */
+        width: auto; /* Deixa o tamanho automático */
+    }
+}

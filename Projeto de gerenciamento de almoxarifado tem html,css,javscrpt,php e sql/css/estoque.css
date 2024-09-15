@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne overflow horizontal */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Cor de fundo principal */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
+    color: #fff;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 65px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+/* Estilo dos itens do menu */
+
+.menu a {
+    background-color: #495057; /* Cor dos botões do menu */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+
+
+.butao:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #555;
+}
+.solicitacao-btn {
+    background-color: #28a745; /* Verde para os botões */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #c8e6c9; /* Verde claro para a borda */
+    text-decoration: none;
+    
+}
+
+.solicitacao-btn:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #ccd1d9;
+}
+
+.menu .active {
+    background-color: #007bff;
+}
+
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0 ;
+    margin-left: 24%;
+    margin-right: 20%;
+    height: 47px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #909da8;;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 27px;
+}
+#butao{
+    margin-left: 100px;
+    border-radius: 19px;
+    padding: 13px;
+    background-color: #b4c1d4;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.table-container {
+    margin: 20px;
+    margin-left: 200px ;
+    margin-right: 200px ;
+  
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
+table th {
+    background-color: #545d64; /* Cinza médio para o cabeçalho da tabela */
+    color: #ffffff;
+    text-align: center;
+}
+
+table td {
+    background-color: #b7c5d3; /* Cinza muito claro para as células da tabela */
+    color: #343a40; /* Texto em cinza escuro */
+}
+
+table tbody tr {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+}
+
+.search-bar .btn {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgb(52, 152, 252);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-left: 40px;
+}
+
+.search-bar .btn:hover {
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: rgb(58, 131, 204);
+}
+
+
+.tab {
+    position: fixed;
+    background-color: #343a40;
+    bottom: -40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 30vw; /* Ajuste da largura */
+    height: 60vh; /* Ajuste da altura */
+    z-index: 5;
+    transition: 0.5s;
+    border-radius: 12px;
+    padding: 20px; /* Adiciona espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaça o conteúdo */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.tab-container {
+    display: none; /* Aba oculta por padrão */
+    position: fixed;
+    max-width: 500px; /* Controle do tamanho no modo desktop */
+    height: auto;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    border-radius: 12px;
+}
+  
+body.show .tab-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.show .tab {
+    transition: .5s;
+    bottom: 50%;
+    border-radius: 12px;
+}
+
+.tab .close {
+    position: absolute;
+    right: 0;
+    margin: 10px 20px;
+    padding: 6px;
+    font-size: 42px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.content {
+    width: 100%; /* Usa todo o espaço disponível */
+    padding: 20px;
+    margin: 35px auto; /* Remove margens superiores e inferiores */
+    border-radius: 10px;
+    color: white; /* Cor do texto */
+}
+h2 {
+    color: white;
+    margin-top: -10px; /* Ajuste para mover o título mais para cima */
+    margin-bottom: 20px; /* Espaço entre o título e o próximo elemento */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.form-group label {
+    margin-top: 10px; /* Espaçamento acima do label "O que você irá fazer:" */
+}
+
+input[type="text"], input[type="date"] {
+    width: calc(100% - 10px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+/* Define uma largura fixa para os campos de input e select */
+input[type="text"], select {
+    width: 100%; /* Ocupa 100% da largura disponível no contêiner */
+    max-width: 300px; /* Define uma largura máxima para ambos os campos */
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura total */
+    padding: 8px; /* Espaçamento interno para ambos os campos */
+    font-size: 14px; /* Tamanho da fonte consistente */
+    border: 1px solid #ccc; /* Borda consistente */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Ajusta o espaçamento ao redor dos campos */
+.form-group {
+    margin-bottom: 15px; /* Espaçamento inferior entre grupos de formulário */
+}
+
+/* Personalização adicional para o botão Enviar */
+.Enviar {
+    width: 100%; /* O botão "Enviar" também ocupará 100% da largura */
+    margin-top: 15px; /* Espaçamento superior para separar do campo anterior */
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccc; /* Cor de fundo do botão */
+    color: #333; /* Cor do texto do botão */
+    cursor: pointer;
+}
+
+.Enviar:hover {
+    background-color: #bbb; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Oculta os botões de rádio */
+}
+
+.radio-group label {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.radio-group label.entrada {
+    background-color: green;
+}
+
+.radio-group label.saida {
+    background-color: red;
+}
+
+.radio-group input[type="radio"]:checked + label.entrada {
+    background-color: darkgreen; /* Cor quando selecionado */
+}
+
+.radio-group input[type="radio"]:checked + label.saida {
+    background-color: darkred; /* Cor quando selecionado */
+}
+
+.radio-group input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #c0c0c0;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.entrada, .saida, .Enviar {
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.entrada {
+    background-color: #a3e635;
+}
+
+.saida {
+    background-color: #f87171;
+}
+.Enviar {
+    background-color: #ccd1d9; /* Cor neutra inicial */
+    border: none;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-top: 15px; /* Empurra o botão para a parte inferior */
+    align-self: center; /* Centraliza o botão horizontalmente */
+}
+
+.Enviar:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #ccd1d9;
+}
+
+#tirarNome {
+    display: block;
+}
+/* Estilo padrão para o botão de pesquisa */
+#search-button .search-icon {
+    display: none; /* Esconde o ícone por padrão */
+    font-size: 18px; /* Tamanho do ícone */
+}
+.search-bar input[type="text"] {
+    height: 44px; /* Ajuste a altura para corresponder à dos botões */
+    padding: 0 10px; /* Espaçamento interno para o texto */
+    font-size: 16px; /* Tamanho da fonte igual ao dos botões */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: none; /* Remova bordas para uniformidade */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra para consistência */
+    margin-right: 20px; /* Espaço entre a barra de pesquisa e o botão */
+    background-color: #909da8; /* Cor de fundo da barra de pesquisa */
+    color: #333; /*Cor do texto da barra de pesquisa*/
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #7c7c7c; /* Cor do placeholder */
+    font-weight: 600; /* Peso da fonte do placeholder */
+}
+/* Ajustes adicionais para os botões */
+.search-bar .btn, 
+#gerencia-button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgb(52, 152, 252);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-left: 10px;
+}
+/* Tornando o site responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center; /* Alinha os itens ao centro */
+        padding: 10px;
+        height: auto;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin: 5px 0;
+        width: 90%; /* Torna os botões mais largos para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        width: 90%; /* Faz com que o botão ocupe quase toda a largura */
+        margin: 10px auto; /* Centraliza o botão */
+    }
+    .search-bar {
+        display: flex;
+        flex-direction: row; /* Alinha os elementos em coluna */
+        align-items: center; /* Alinha os elementos ao início */
+        width: 100%;
+        padding: 0 10px;
+        gap: 5px;
+    }
+
+    #search-button {
+        margin-bottom: 5px; /* Adiciona margem abaixo do botão de pesquisa */
+    }
+    #search-query {
+        flex-grow: 1; /* Faz com que o campo de pesquisa ocupe o espaço disponível */
+    }
+
+    #gerencia-button {
+        margin-bottom: 5px; /* Adiciona margem abaixo */
+        width: 100%; /* Faz o botão de gerenciar ocupar 100% da largura */
+    }
+
+    /* Esconde o texto do botão de pesquisa */
+    #search-button .search-text {
+        display: none;
+    }
+    
+    /* Mostra o ícone de lupa */
+    #search-button .search-icon {
+        display: inline;
+        font-size: 20px;
+    }
+    #search-button, #gerencia-button {
+        width: auto; /* Mantém a largura automática dos botões */
+        margin-bottom: 0; /* Remove a margem inferior */
+    }
+    #gerencia-button.gerencia-small {
+        font-size: 14px; /* Fonte menor */
+        padding: 5px 8px; /* Padding menor */
+        margin-left: 5px; /* Espaço entre o botão "Pesquisar" e o botão "Gerenciar" */
+        margin-right: 5px;
+        background-color: rgb(58, 131, 204);
+        border-radius: 8px; /* Bordas arredondadas */
+        width: auto; /* Largura automática */
+        display: inline-block; /* Exibição em bloco */
+    }
+    
+    .table-container {
+        padding: 0; /* Remove o padding */
+        margin: 0; /* Remove margens */
+        width: 100%; /* Garante que a tabela ocupe toda a largura disponível */
+    }
+
+    table {
+        width: 100%; /* Garante que a tabela ocupe toda a largura */
+        table-layout: auto; /* As colunas se ajustam automaticamente */
+    }
+
+    table th, table td {
+        font-size: 15px;
+        padding: 10px;
+        word-wrap: break-word; /* Permite quebra de linha no texto */
+    }
+
+    .container {
+        padding: 0; /* Remove padding do contêiner geral */
+        margin: 0; /* Remove margens do contêiner geral */
+        width: 100%; /* Ocupa toda a largura da tela */
+    }
+    
+    /* Para garantir que todo o conteúdo esteja alinhado corretamente */
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%; /* O corpo do site deve ocupar toda a largura da tela */
+    }
+    .tab {
+        width: 70vw; /* Reduzindo a largura para 70% da tela em tablets e dispositivos menores */
+        height: 40vh; /* Aumenta a altura */
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    .tab-container {
+        display: none; /* Esconde a aba por padrão */
+        position: relative;
+        max-width: 80vw; /* Ocupa até 90% da largura da tela */
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0);
+        bottom: auto;
+        padding: 10px; /* Ajusta o padding para telas menores */
+        border-radius: 12px;
+        z-index: 1000; /* Garante que a aba fique acima de outros elementos */
+    }
+
+    .tab-container.show {
+        display: block; /* Exibe a aba quando a classe 'show' estiver presente */
+    }
+
+    .tab-container .close {
+        font-size: 32px;
+        margin: 5px 10px;
+        cursor: pointer; /* Cursor de pointer ao passar por cima do X */
+    }
+
+    .content {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .radio-group {
+        display: flex;
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 10px; /* Espaço entre os botões */
+        margin-top: 10px;
+    }
+
+    .entrada, .saida, .Enviar {
+        width: 100%; /* Botões ocupando 100% da largura */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .Enviar {
+        margin: 20px 0 0 0;
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="date"] {
+        width: 100%; /* Campos de texto ocupando 100% da largura */
+    }
+
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para dispositivos ainda menores */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* Centraliza os itens */
+        width: 100%; /* Ocupa toda a largura */
+        position: relative; /* Contexto de posicionamento para o botão */
+        padding: 10px;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around;
+        margin-bottom: 10px; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin-right: 5px;
+        
+        width: 90%; /* Ajusta os botões para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        order: -1; /* Coloca o botão no topo */
+        position: absolute;
+        top: 10px; /* Alinha o botão ao topo */
+        right: 25px; /* Alinha o botão à direita */
+        margin-left: 0; /* Remove a margem automática */
+        width: auto; /* Mantém o tamanho automático */
+    }
+
+    /* Ajuste do logo para estar acima do botão DashBoard */
+    .logo {
+        margin-bottom: 10px;
+        margin-left: 1px; /* Afasta um pouco da lateral esquerda */
+        align-self: flex-start; /* Alinha à esquerda */
+    }
+
+    .logo img {
+        width: 60px;  /* Ajusta o tamanho conforme necessário */
+        height: 50px;
+    }
+
+    /* Garante que os botões do menu fiquem após o logo */
+    .menu, .menur, .menue {
+        order: 1;
+        width: 100%;
+        text-align: left; /* Alinha os botões à esquerda */
+    }
+    .search-bar {
+        flex-direction: column; /* Alinha os elementos em coluna para telas menores */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    #search-button, #gerencia-button {
+        width: 100%; /* Faz com que os botões ocupem toda a largura */
+        margin-bottom: 5px;
+    }
+    #search-query {
+        width: auto;
+        margin-bottom: 5px;
+    }
+    #search-button {
+        padding: 5px 8px;
+    }
+
+    /* Opcional: Pode ajustar o tamanho do ícone se necessário */
+    #search-button .search-icon {
+        font-size: 18px;
+    }
+    #search-button, #gerencia-button {
+        width: auto; /* Mantém a largura automática */
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+    .tab {
+        width: 85vw; /* Reduzindo a largura para 85% da tela em dispositivos móveis */
+        height: 50vh; /* Aumenta a altura */
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    .tab-container {
+        width: 95vw; /* Aumenta a largura para 95% da largura da tela em telas menores */
+        max-width: 85vw; /* Ocupa até 95% da largura da tela */
+        padding: 10px; /* Ajusta o padding para telas menores */
+        border-radius: 12px;
+        z-index: 1000;
+    }
+    .table-container {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        table-layout: auto;
+    }
+
+    table th, table td {
+        font-size: 13px;
+        padding: 5px;
+    }
+    
+}  

@@ -1,0 +1,23 @@
+.search-bar .btng {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-left: 40px;
+}
+
+.search-bar .btng:hover {
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: rgb(0, 111, 223);
+}
+
+
+
+

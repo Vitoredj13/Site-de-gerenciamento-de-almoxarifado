@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne overflow horizontal */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Cor de fundo principal */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
+    color: #fff;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 65px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+/* Estilo dos itens do menu */
+
+.menu a {
+    background-color: #495057; /* Cor dos botões do menu */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+
+
+.butao:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #555;
+}
+.solicitacao-btn {
+    background-color: #28a745; /* Verde para os botões */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #c8e6c9; /* Verde claro para a borda */
+    text-decoration: none;
+    
+}
+
+.solicitacao-btn:hover{
+    transition: .2s;
+    transform: perspective(200px) translateZ(10px);
+    background-color: #ccd1d9;
+}
+
+.menu .active {
+    background-color: #007bff;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0 ;
+    margin-left: 20%;
+    margin-right: 23.5%;
+    height: 47px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #909da8; /* Cinza médio para o cabeçalho da tabela */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    margin: 80px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #495057;
+}
+
+table th {
+    background-color: #888;
+}
+
+/* table td {
+    background-color: #f9f9f9;
+} */
+
+/* Remova esta linha se estiver interferindo com as classes */
+table tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+/* Ajustes nas classes específicas */
+.entrada {
+    background-color: #d9ebdd !important; /* Verde claro */
+    color: #155724 !important; /* Verde escuro para o texto */
+}
+
+.saida {
+    background-color: #f8d8da !important; /* Vermelho claro */
+    color: #721c24 !important; /* Vermelho escuro para o texto */
+}
+
+/* Tornando o site responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center; /* Alinha os itens ao centro */
+        padding: 10px;
+        height: auto;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin: 5px 0;
+        width: 90%; /* Torna os botões mais largos para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        width: 90%; /* Faz com que o botão ocupe quase toda a largura */
+        margin: 10px auto; /* Centraliza o botão */
+    }
+    .table-container {
+        margin: 20px;
+        margin-left: 0; /* Move the table to the left */
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para dispositivos ainda menores */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* Centraliza os itens */
+        width: 100%; /* Ocupa toda a largura */
+        position: relative; /* Contexto de posicionamento para o botão */
+        padding: 10px;
+    }
+
+    .menu, .menur, .menue {
+        justify-content: space-around;
+        margin-bottom: 10px; /* Distribui os itens uniformemente */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .menu a, .menur a, .menue a {
+        margin-right: 5px;
+        
+        width: 90%; /* Ajusta os botões para preenchimento da tela */
+        text-align: center;
+    }
+
+    .solicitacao-btn {
+        order: -1; /* Coloca o botão no topo */
+        position: absolute;
+        top: 10px; /* Alinha o botão ao topo */
+        right: 25px; /* Alinha o botão à direita */
+        margin-left: 0; /* Remove a margem automática */
+        width: auto; /* Mantém o tamanho automático */
+    }
+
+    /* Ajuste do logo para estar acima do botão DashBoard */
+    .logo {
+        margin-bottom: 10px;
+        margin-left: 1px; /* Afasta um pouco da lateral esquerda */
+        align-self: flex-start; /* Alinha à esquerda */
+    }
+
+    .logo img {
+        width: 60px;  /* Ajusta o tamanho conforme necessário */
+        height: 50px;
+    }
+
+    /* Garante que os botões do menu fiquem após o logo */
+    .menu, .menur, .menue {
+        order: 1;
+        width: 100%;
+        text-align: left; /* Alinha os botões à esquerda */
+    }
+    .table-container {
+        padding: 10px;
+        margin-left: 0; /* Move the table to the left */
+    }
+
+    table th, table td {
+        font-size: 10px;
+        padding: 4px;
+    }
+}
